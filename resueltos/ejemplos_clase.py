@@ -33,7 +33,7 @@ def practica_listas():
         lista1.append(n)
 
     print('1:', lista1)
-
+    
     # 2) Crear una lista que contengo unicamente los nùmeros
     # pares entre -10 y 10
 

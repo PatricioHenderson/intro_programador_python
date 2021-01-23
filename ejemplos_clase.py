@@ -4,20 +4,20 @@ Listas [Python]
 Ejemplos de clase
 ---------------------------
 Autor: Inove Coding School
-Version: 1.1
+Version: 1.4
 
 Descripcion:
 Programa creado para mostrar ejemplos prácticos de los visto durante la clase
 '''
 
 __author__ = "Inove Coding School"
-__email__ = "alumnos@inove.com.ar"
-__version__ = "1.1"
+__email__ = "patriciohenderson@hotmai.com"
+__version__ = "1.4"
 
 import math
 
-# import numpy as np
-# import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib as plt
 
 
 def practica_listas():
@@ -28,16 +28,24 @@ def practica_listas():
 
     lista1 = []  # Lista vacia
 
+    for i in range (-10,11):
+        lista1.append(i)
+
     # Crear una lista de rango -10 a 10 inclusive
 
     print('1:', lista1)
-
+    
     # 2) Crear una lista que contengo unicamente los nùmeros
     # pares entre -10 y 10
 
     lista2 = []  # Lista vacia
     # Crear una lista de rango -10 a 10 inclusive de 
     # solo nùmeros pares
+    for i in range (-10,11):
+        if (i % 2 ) == 0:
+            lista2.append(i)
+        else:
+            pass
 
     print('2:', lista2)
 
@@ -46,7 +54,9 @@ def practica_listas():
 
     lista3 = []  # Lista vacia
     # Filtrar numeros positivos
-
+    for i in lista1:
+        if i > 0:
+            lista3.append(i)
     print('3:', lista3)
 
     # 4) De la lista1 filtrar los números mayores a 3, es decir,
@@ -55,12 +65,22 @@ def practica_listas():
     lista4 = []  # Lista vacia
     # Filtrar numeros mayores a 3
 
+    for i in lista1 :
+
+        if i > 3 :
+            
+            lista4.append(i)
+
     print('4:', lista4)
 
     # 5) De la lista1 realizar la suma de todos los números
 
     suma_total = 0
     # Sumar numeros
+
+    for i in lista1 :
+
+        suma_total += i
 
     print('5:', suma_total)
 
@@ -70,7 +90,27 @@ def practica_listas():
     lista6 = []  # Lista vacia
     # Aplicar mdulo
 
+    for i in lista1:
+
+        if i < 0 :
+            lista6.append(-i)
+
+        if i >= 0 :
+            lista6.append(i) 
+
+        else :
+            pass   
+
     print('6:', lista6)
+
+    lista6_bis = []
+
+    for i in lista1 :
+
+        lista6_bis.append(abs(i))
+    
+    print ("6 Bis : " , lista6_bis)
+
 
     # 7) Calcular la suma entre la lista 1 y la lista 6
     # Como son del mismo utilizar len para calcular el largo
@@ -79,31 +119,50 @@ def practica_listas():
     lista7 = []  # Lista vacia
     # Sumar listas
 
+    for i in range (len(lista1)):
+
+        suma = lista1[i]+lista6[i]
+
+        lista7.append(suma)
+
+    sumatoria_7 = 0
+
+    for i in range (len(lista1)):
+
+        sumatoria_7 += lista1[i]+lista6[i]
+
+        
+
     print('7:', lista1)
     print('7:', lista6)
     print('7:', lista7)
+    print('7: sumatoria ' , sumatoria_7)
 
     # 8) De la lista1 calcular los números elevados al cuadrado
 
     lista8 = []  # Lista vacia
     # Elevar al cuadrado
 
+    for i in lista1:
+        lista8.append(i**2)
+
     print('8:', lista8)
 
     # 9) Crear una lista "x" cuyo rango esté comprendido
     # entre 0 y 4pi, que tenga 40 elementos
     # Calcular la función seno de x
-    # x = np.linspace(0, 4*math.pi, 40)
+    x = np.linspace(0, 4*math.pi, 40)
 
-    # lista9 = []  # Lista vacia
+    print (x)
+    lista9 = []  # Lista vacia
     # # Elevar al cuadrado
-    # for n in x:
-    #     lista9.append(math.sin(n))
+    for n in x:
+        lista9.append(math.sin(n))
 
 
-    # plt.plot(x, lista9, c='darkblue')
-    # plt.grid(ls='dashed')
-    # plt.show()
+    plt.plot(x, lista9, c='darkblue')
+    plt.grid(ls='dashed')
+    plt.show()
 
 
 if __name__ == '__main__':
